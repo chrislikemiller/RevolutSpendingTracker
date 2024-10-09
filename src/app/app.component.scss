@@ -1,3 +1,60 @@
+@use "./../variables.scss";
+
+
 main {
-    margin-bottom: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    margin: .5em 1em;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: var(--delay);
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1em 2em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.border {
+    border: 1px solid #66b3ff
+}
+
+
+.statistics {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1em;
+    gap: .5em 3em;
+    max-height: 40rem; // todo how does that look on mobile?
+    max-width: 50vw;
+}
+
+.spending-title {
+    color: white;
+    font-variant-caps: small-caps;
+    margin: 1.5em 0em .5em 2em;
+}
+
+.spendings-incomes {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
 }

@@ -1,0 +1,104 @@
+@use "./../../variables.scss";
+
+.root *,
+    .root *:after,
+    .root *:before {
+      box-sizing: border-box;
+    }
+    
+    // .root {
+    //     display: flex;
+    //     flex-direction: row;
+    // }
+
+    .checkbox-input {
+        margin: 5%;
+    }
+
+    .root .checkbox-input {
+      clip: rect(0 0 0 0);
+      -webkit-clip-path: inset(100%);
+              clip-path: inset(100%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+    .root .checkbox-input:checked + .tile {
+      border-color: variables.$highlight-color;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      color: variables.$highlight-color;
+    }
+    .root .checkbox-input:checked + .tile:before {
+      transform: scale(1);
+      opacity: 1;
+      justify-content: center;
+      background-color: variables.$highlight-color;
+      border-color: variables.$highlight-color;
+    }
+    .root .checkbox-input:checked + .tile{
+      color: variables.$highlight-color;
+    }
+    .root .checkbox-input:focus + .tile {
+      border-color: variables.$highlight-color;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+    }
+    .root .checkbox-input:focus + .tile:before {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .checkbox-label {
+        min-width: 10rem;
+        padding-right: 10%;
+    }
+  
+    .root .tile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      min-width: 6rem;
+      height: 3rem;
+      border-radius: .7rem;
+      background-color: variables.$item-background-color;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      transition: 0.15s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .root .tile:before {
+      content: "";
+      display: flex;
+      flex-direction: row;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 2px solid #b5bfd9;
+      margin: 10px;
+      background-color: variables.$item-background-color;
+      border-radius: 50%;
+      top: 0.25rem;
+      left: 0.25rem;
+      opacity: 0;
+      transform: scale(0);
+      transition: 0.25s ease;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: 12px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    .root .tile:hover {
+      border-color: variables.$highlight-color;
+    //   margin-left: 5%;
+    //   margin-right: 5%;
+    }
+    .root .tile:hover:before {
+      transform: scale(1);
+      opacity: 1;
+    }
+ 
+    .root .checkbox-label {
+      color: #fff;
+      transition: 0.375s ease;
+      text-align: center;
+    }

@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  { path: 'p', component: ProgressBarComponent },
+  // { path: 'test', component: AppComponent },
 ];

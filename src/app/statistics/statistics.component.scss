@@ -1,0 +1,39 @@
+@use "./../../variables.scss";
+
+.aggregation {
+    display: flex;
+    flex-flow: column wrap;
+    opacity: 0;
+    animation: fadeIn 0.2s ease forwards;
+    animation-delay: var(--delay);
+}
+
+.aggregation > * {
+    gap: .5em;
+}
+
+.aggregation-item {
+    background-color: variables.$item-background-color;
+    display: flex;
+    justify-content: stretch;
+    flex-flow: column wrap;
+    border-radius: 1em;
+    color: #fff;
+    margin: .5em 1em;
+    padding: 1em;
+    min-width: max-content;
+}
+
+.category-title {
+    color: variables.$highlight-color;
+    font-variant-caps: small-caps;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
