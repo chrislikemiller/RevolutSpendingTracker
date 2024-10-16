@@ -13,6 +13,7 @@ export class BackendService {
   }
 
   getSpendingsByMonth(month: number): Observable<any[]> {
+    month = month + 1; // for whatever reason, month = 1 is February
     return this.http.post<any>(`${this.apiUrl}/byMonth`, { month });
   }
 }
