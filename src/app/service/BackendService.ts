@@ -1,5 +1,5 @@
 import { Inject, Injectable, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -11,7 +11,8 @@ export class BackendService {
   fetchSpendings(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
   getSpendingsByMonth(month: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/${month}`);
+    return this.http.post<any>(`${this.apiUrl}/byMonth`, { month });
   }
 }
